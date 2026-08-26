@@ -1,18 +1,26 @@
 import { Card } from "./components/prop-heavy-card/Card";
+import { ReUseableCard } from "./components/prop-reuseable-card/ReUseableCard";
 
 function App() {
   return (
     <>
-      <Card
-        title="Abhisek Das"
-        description="abhisek@example.com"
-        showIcon={true}
-        icon="👤"
-        showAction={true}
-        actionLabel="Edit"
-        showFooter={true}
-        footerText="Software Engineer"
-      />
+      <ReUseableCard
+        header={
+            <div>
+              <span>👤</span>
+              <h2>Abhisek</h2>
+            </div>
+          }
+        actions={
+          <>
+            <button>Edit-1</button>
+            <button>Edit-2</button>
+          </>
+        }
+      >
+        <p>abhisek@example.com</p>
+          <p>Software Engineer</p>
+      </ReUseableCard>
 
       <hr/>
 
@@ -31,6 +39,29 @@ function App() {
         footerText="Action required"
         isWarning
       />
+
+
+      <hr/>
+      <ReUseableCard
+        header={
+          <div>
+            <span>⚠️</span>
+            <h2>Account Warning</h2>
+          </div>
+        }
+        actions={
+          <>
+            <button>Dismiss</button>
+            <button>Review</button>
+          </>
+        }
+      >
+        <p>Your subscription expires tomorrow.</p>
+
+        <p>Please review this carefully.</p>
+
+        <small>Action required</small>
+      </ReUseableCard>
     </>
     
   );
