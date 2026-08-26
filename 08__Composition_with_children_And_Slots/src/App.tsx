@@ -15,17 +15,21 @@ function App() {
       />
 
       <hr/>
-      
+
+      {/* Added 2 buttons to warning 'Dismiss' and 'Review' */}
+      {/* Initially , we had only 1 button to display. */}
       <Card
         title="Account Warning"
         description="Your subscription expires tomorrow."
-        showIcon={true}
+        showIcon
         icon="⚠️"
-        showAction={true}
+        showAction
         actionLabel="Review"
-        showFooter={true}
+        showSecondAction
+        secondActionLabel="Dismiss"
+        showFooter
         footerText="Action required"
-        isWarning={true}
+        isWarning
       />
     </>
     

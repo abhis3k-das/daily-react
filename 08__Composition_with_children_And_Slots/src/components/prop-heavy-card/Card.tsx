@@ -8,6 +8,9 @@ type CardProps = {
   showAction?: boolean;
   actionLabel?: string;
 
+  showSecondAction?: boolean;
+  secondActionLabel?: string;
+
   showFooter?: boolean;
   footerText?: string;
 
@@ -21,6 +24,8 @@ export function Card({
   icon,
   showAction,
   actionLabel,
+  showSecondAction,
+  secondActionLabel,
   showFooter,
   footerText,
   isWarning,
@@ -40,6 +45,12 @@ export function Card({
       {showAction && (
         <button>
           {actionLabel}
+        </button>
+      )}
+
+      {showSecondAction && (
+        <button>
+          {secondActionLabel}
         </button>
       )}
 
